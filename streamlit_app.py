@@ -1,3 +1,4 @@
+import os
 import kagglehub
 import pandas as pd
 import requests
@@ -8,6 +9,10 @@ st.set_page_config(page_title="EK 2024 en welvaart", layout="wide")
 # spelers via de Kaggle-API
 @st.cache_data
 def haal_spelers():
+    if "KAGGLE_USERNAME" in st.secrets:
+        os.environ["KAGGLE_USERNAME"] = st.secrets["KAGGLE_USERNAME"]
+        os.environ["KAGGLE_KEY"] = st.secrets["KAGGLE_KEY"]
+
     return kagglehub.dataset_load(
         KaggleDatasetAdapter.PANDAS,
         "damirdizdarevic/uefa-euro-2024-players",
