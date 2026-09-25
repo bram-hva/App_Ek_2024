@@ -216,7 +216,7 @@ st.plotly_chart(fig2, use_container_width=True)
 st.caption("Rood = meer dan de helft van de squadwaarde zit in drie spelers.")
 
 # welvaart tegenover sterafhankelijkheid
-st.subheader("Hoe armer het land, hoe meer afhankelijk van indivuele spelers")
+st.subheader("Hoe armer het land, hoe meer afhankelijk van individuele spelers")
 
 ster["BBP"] = ster["Land"].map(selectie.groupby("Land")["BBP"].first())
 
