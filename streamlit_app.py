@@ -155,7 +155,7 @@ top_clubs.columns = ["Club", "Spelers"]
 
 
 # barplot incl aantal ek deelnemers per club
-st.subheader("Inter milaan en Mancester city hebben de meeste voetballers geleverd")
+st.subheader("Inter Milaan en Manchester city hebben de meeste voetballers geleverd")
 fig5 = px.bar(top_clubs.sort_values("Spelers"), x="Spelers", y="Club",
               orientation="h", labels={"Club": ""})
 st.plotly_chart(fig5, use_container_width=True)
